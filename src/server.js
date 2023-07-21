@@ -40,14 +40,23 @@ const io = new Server(httpServer, {
 
 io.on("connection", (socket) => {
   console.log(` ${socket.id} id connected to socket `);
+   
+   
 
+  socket.on('get-count', ()=>{
+       const count = io.engine.clientsCount;
+           socket.emit("get-count" , count  )
+  })
+   
   socket.on("group-message", (data) => {
         //  socket.broadcast.emit('group-message-to-all' ,  data)
+      
          io.emit('group-message-to-all' ,  data)
     }); 
     
 
     socket.on('room-message' ,(messages , room )=>{ 
+       
       io.to(room).emit('room-message' , messages)
      })
       
