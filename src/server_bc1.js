@@ -32,10 +32,10 @@ io.on('connection' ,(socket)=>{
         name:"skntmax"
   })
 
-
   socket.on('sendMessage' ,(data)=>{
       log(data)
   })
+  
 
      socket.on("disconnect", () => {
         console.log("Client disconnected" );

@@ -46,6 +46,12 @@ io.on("connection", (socket) => {
          io.emit('group-message-to-all' ,  data)
     }); 
     
+
+    socket.on('room-message' ,(messages , room )=>{ 
+      io.to(room).emit('room-message' , messages)
+     })
+      
+
     socket.on("disconnect", () => {
       console.log("Client disconnected" );
     });
