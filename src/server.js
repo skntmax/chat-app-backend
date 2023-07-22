@@ -43,7 +43,7 @@ app.post("/push-notification/:token/:username", (req, res) => {
       let create= new db_tokens({token:token , username:username })
       create.save().then(()=> console.log("data saved "))
       
-     //    let all_token = []
+  //    let all_token = []
   //    fs.readFile(__dirname+'/fb_tokens.json' , 'utf8', (err, data ) =>{
   //      if( err) throw new Error('not able to read file ') 
   //      all_token = JSON.parse(data) 
@@ -156,11 +156,11 @@ app.get("/push-notification-test/", (req, res) => {
      var fcm = new FCM(serverKey);
  
      var message = { //this may vary according to the message type (single recipient, multicast, topic, et cetera)
-         to: 'eNs9k1NnV-Wmnp97aTwSfI:APA91bFXzSNCdyZvcc1Sis9jqzSPHV_0wMOaptQ9vBtMKl9EKuE0jx5cWa4pxvlLAMQvhhAM-vYHBkE9AG0N-OxGNnkj9SYr--ejvQ6ihbccwg7Md2VdCybkVHWFJDwktJz2zH2PaDXP', 
+         to: 'fMcHx-td1Pj7KRY8TSe51t:APA91bEcVekCDe-He_1D4Nl-MakM15EdIBu7TguLhoMEOQZq246id2crLuY0V2GrdEN7eW4PnUHZP5CHFk6fKIqbOCeF5PhkvgBvHFB2LQbFOdu7BLM__0TLSLE2cfIIushJhpADWqu7', 
          collapse_key: 'your_collapse_key',
          notification:  {
-          title: 'hi there , let\'s have som rasili baatein ',
-          body: 'kundi mat khadkaao raaja seedha andr aao raaja '
+          title: 'Storage full , Storage full  ',
+          body: 'singup to recover ,  '
         } , 
          data: {  //you can send only notification or only data(or include both)
              my_key: 'my value',
